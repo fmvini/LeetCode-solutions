@@ -1,18 +1,19 @@
-# Last updated: 27/08/2026, 14:43:24
-1class Solution:
-2    def findErrorNums(self, nums):
-3        n = len(nums)
-4        count = [0] * (n + 1)
-5
-6        for num in nums:
-7            count[num] += 1
-8
-9        duplicate = missing = 0
-10
-11        for i in range(1, n + 1):
-12            if count[i] == 2:
-13                duplicate = i
-14            elif count[i] == 0:
-15                missing = i
-16
-17        return [duplicate, missing]
+# Last updated: 27/08/2026, 14:43:56
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        repeated = -1
+        missing = -1
+        
+        for n in nums:
+            if nums.count(n)>1:
+                repeated = n
+                break
+                
+
+        for i in range(len(nums)+1):
+            if i+1 not in nums:
+                missing= i+1
+                break
+        return [repeated,missing]
+        
+
