@@ -1,4 +1,4 @@
-# Last updated: 29/08/2026, 18:59:21
+# Last updated: 29/08/2026, 18:59:34
 1class Solution:
 2    def smallerNumbersThanCurrent(self, nums):
 3        sorted_nums = sorted(nums)
